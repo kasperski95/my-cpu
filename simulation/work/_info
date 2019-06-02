@@ -1,0 +1,110 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dF:/intelFPGA_lite/17.1
+Ealu_tb
+Z0 w1559478903
+Z1 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z2 DPx9 cycloneiv 19 cycloneiv_atom_pack 0 22 h>^;BQWjM;n:gDXGk_;g00
+Z3 DPx9 cycloneiv 20 cycloneiv_components 0 22 ZG8VboUoN;mJ7?NJMokFV1
+Z4 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
+Z5 DPx6 altera 11 dffeas_pack 0 22 ?bDUB9Db2N8iCCALNL;CT3
+Z6 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
+Z7 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z8 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z9 DPx6 altera 28 altera_primitives_components 0 22 c]VUMXSEi8Z`KM1bem<:B3
+Z10 dF:/Projects/EDA/cpu/simulation
+Z11 8F:/Projects/EDA/cpu/simulation/modelsim/cpu.vho
+Z12 FF:/Projects/EDA/cpu/simulation/modelsim/cpu.vho
+l0
+L82
+V^i[f?=BRC5J?b`Pdj_SD51
+!s100 dH9XRbm0INU?i2j``64WH1
+Z13 OV;C;10.5b;63
+32
+Z14 !s110 1559478934
+!i10b 1
+Z15 !s108 1559478934.000000
+Z16 !s90 -reportprogress|300|-work|work|-2002|-explicit|F:/Projects/EDA/cpu/simulation/modelsim/cpu.vho|
+Z17 !s107 F:/Projects/EDA/cpu/simulation/modelsim/cpu.vho|
+!i113 1
+Z18 o-work work -2002 -explicit
+Z19 tExplicit 1 CvgOpt 0
+Astructure
+R1
+R2
+R3
+R4
+R5
+R6
+R7
+R8
+R9
+DEx4 work 6 alu_tb 0 22 ^i[f?=BRC5J?b`Pdj_SD51
+l261
+L156
+V8@g0_DC^<Z[n=hKF<?D<e0
+!s100 ogkiK6g5ml6A6l4Lz6c6P3
+R13
+32
+R14
+!i10b 1
+R15
+R16
+R17
+!i113 1
+R18
+R19
+Ehard_block
+R0
+R4
+R2
+R6
+R7
+R8
+R3
+R10
+R11
+R12
+l0
+L34
+VVh9X_5SR7@bKD_i@3ICa`3
+!s100 ePBnogNIYclWVmd<QYN@33
+R13
+32
+R14
+!i10b 1
+R15
+R16
+R17
+!i113 1
+R18
+R19
+Astructure
+R4
+R2
+R6
+R7
+R8
+R3
+Z20 DEx4 work 10 hard_block 0 22 Vh9X_5SR7@bKD_i@3ICa`3
+l64
+L50
+Z21 V[9b9]VHa5L51o27oXV8`m3
+Z22 !s100 kOJJ6`E^kUBSVedEH`kGJ1
+R13
+32
+R14
+!i10b 1
+R15
+R16
+R17
+!i113 1
+R18
+R19
