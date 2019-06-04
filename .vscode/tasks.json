@@ -1,0 +1,59 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build",
+      "type": "shell",
+      "command": "${workspaceFolder}/.bin/build.bat",
+      "args": [
+        "${file}"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "presentation": {
+        "reveal": "always",
+        "showReuseMessage": false,
+        "echo": false,
+        "clear": true
+      },
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      
+    },
+    {
+      "label": "Check syntax",
+      "type": "shell",
+      "command": "ghdl",
+      "args": [
+        "-s",
+        "${file}"
+      ],
+      "presentation": {
+        "reveal": "always",
+        "showReuseMessage": false,
+        "echo": false,
+        "clear": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Run all tests",
+      "type": "shell",
+      "command": "${workspaceFolder}/.bin/test.bat",
+      "group": "test",
+      "presentation": {
+        "reveal": "always",
+        "showReuseMessage": false,
+        "echo": false,
+        "clear": true
+      }
+    }
+      
+  ]
+}
