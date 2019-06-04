@@ -9,12 +9,12 @@ end alu_tb;
 
 architecture test of alu_tb is
 	component alu
-	port (
-		INPUT_A, INPUT_B 							: in signed(15 downto 0);
-		ACTION_ID 										: in std_ulogic_vector(2 downto 0);
-		CARRY, ZERO, NEGATIVE, PARITY	: out std_logic;
-		OUTPUT_Y 											: out signed(15 downto 0)
-	);
+		port (
+			INPUT_A, INPUT_B 							: in signed(15 downto 0);
+			ACTION_ID 										: in std_ulogic_vector(2 downto 0);
+			CARRY, ZERO, NEGATIVE, PARITY	: out std_logic;
+			OUTPUT_Y 											: out signed(15 downto 0)
+		);
 	end component;
 
 	signal input_a, input_b 							: signed(15 downto 0);
