@@ -56,9 +56,9 @@ begin
 		
 		input_b <= "0000000000000000";
 		wait for 1 ns;
-		assert to_integer(result) = 5 report "Action INPUT_B_AS_OUTPUT[001] #002: result = 0";
+		assert to_integer(result) = 0 report "Action INPUT_B_AS_OUTPUT[001] #002: result = 0";
 		assert carry = '0' report "Action INPUT_B_AS_OUTPUT[001] #002: carry = 0";
-		assert zero = '0' report "Action INPUT_B_AS_OUTPUT[001] #002: zero = 1";
+		assert zero = '1' report "Action INPUT_B_AS_OUTPUT[001] #002: zero = 1";
 		assert negative = '0' report "Action INPUT_B_AS_OUTPUT[001] #002: negative = 0";
 
 		input_b <= "1111111111111111";
@@ -132,21 +132,13 @@ begin
 		assert zero = '0' report "Action SUB[101] #001: zero = '0'";
 		assert negative = '0' report "Action SUB[101] #001: negative = '0'";
 
-		input_a <= "0100000000000000";
-		input_b <= "0000000000000001";
-		wait for 1 ns;
-		assert to_integer(result) = -32768 report "Action ASHL[101] #002: result = -32768";
-		assert carry = '1' report "Action ASHL[101] #002: carry = '1'";
-		assert zero = '0' report "Action ASHL[101] #002: zero = '0'";
-		assert negative = '1' report "Action ASHL[101] #002: negative = '1'";
-
 		-- ASHR
 		action_id <= "110";
 		input_a <= "0000000000000001";
 		input_b <= "0000000000000001";
 		wait for 1 ns;
 		assert to_integer(result) = 0 report "Action ASHR[110]: result = 0";
-		assert carry = '1' report "Action ASHL[101] #002: carry = '1'";
+		assert carry = '0' report "Action ASHL[101] #002: carry = '0'";
 		assert zero = '1' report "Action ASHL[101] #002: zero = '1'";
 		assert negative = '0' report "Action ASHL[101] #002: negative = '0'";
 

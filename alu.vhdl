@@ -57,9 +57,7 @@ begin
 				if extended_input_a > 9999 then
 					carry_flag := '1';
 				end if;
-				if extended_input_a(16) = '1' then
-					negative_flag := '1';
-				end if;
+				
 				tmp1 := to_unsigned(to_integer(extended_input_a(15 downto 0)), 16);
 				tmp2 := "0000000000000000";
 				for i in 0 to 15 loop
@@ -90,6 +88,9 @@ begin
 		
 		if result = "00000000000000000"
 			then zero_flag:='1'; 
+		end if;
+		if result(16) = '1' then
+			negative_flag := '1';
 		end if;
 
 		OUTPUT_Y 	<= result(15 downto 0);
