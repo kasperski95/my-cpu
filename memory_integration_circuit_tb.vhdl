@@ -10,17 +10,17 @@ end memory_integration_circuit_tb;
 architecture test of memory_integration_circuit_tb is
 	component memory_integration_circuit
     port (
-      ADDRESS_BUS       : in signed(15 downto 0);
+      ADDRESS_BUS       : in unsigned(15 downto 0);
       DATA_BUS          : inout signed (15 downto 0);
       DATA_TO_WRITE     : in signed(15 downto 0);
       DATA_TO_READ      : out signed(15 downto 0);
       READ_ADDRESS_BUS, SAVE_DATA_TO_WRITE, WRITE_DATA, READ_DATA : in std_logic;
-      ADDRESS_TO_WRITE  : out signed (15 downto 0);
+      ADDRESS_TO_WRITE  : out unsigned (15 downto 0);
       WR, RD            : out std_logic
     );
 	end component;
 
-  signal address_bus        : signed(15 downto 0);
+  signal address_bus        : unsigned(15 downto 0);
   signal data_bus           : signed(15 downto 0);
   signal data_to_write      : signed(15 downto 0);
   signal data_to_read       : signed(15 downto 0);
@@ -28,7 +28,7 @@ architecture test of memory_integration_circuit_tb is
   signal save_data_to_write : std_logic;
   signal write_data         : std_logic;
   signal read_data          : std_logic;
-  signal address_to_write   : signed(15 downto 0);
+  signal address_to_write   : unsigned(15 downto 0);
   signal wr                 : std_logic;
   signal rd                 : std_logic;
   

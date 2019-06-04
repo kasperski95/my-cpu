@@ -5,12 +5,12 @@ use ieee.numeric_std.all;
 
 entity memory_integration_circuit is
   port (
-    ADDRESS_BUS       : in signed(15 downto 0);
+    ADDRESS_BUS       : in unsigned(15 downto 0);
     DATA_BUS          : inout signed (15 downto 0);
     DATA_TO_WRITE     : in signed(15 downto 0);
     DATA_TO_READ      : out signed(15 downto 0);
     READ_ADDRESS_BUS, SAVE_DATA_TO_WRITE, WRITE_DATA, READ_DATA : in std_logic;
-    ADDRESS_TO_WRITE  : out signed (15 downto 0);
+    ADDRESS_TO_WRITE  : out unsigned (15 downto 0);
     WR, RD            : out std_logic
   );
 end entity;
@@ -20,7 +20,7 @@ architecture rtl of memory_integration_circuit is
 begin
   process(READ_ADDRESS_BUS, ADDRESS_BUS, SAVE_DATA_TO_WRITE, DATA_TO_WRITE, DATA_BUS, WRITE_DATA, READ_DATA)
     variable mbr_in, mbr_out  : signed(15 downto 0);
-    variable mar              : signed(15 downto 0);
+    variable mar              : unsigned(15 downto 0);
 
   begin
     if (READ_ADDRESS_BUS = '1') then
