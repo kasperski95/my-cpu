@@ -5,28 +5,28 @@ use ieee.numeric_std.all;
 
 entity ALU is
 	port (
-		INPUT_A, INPUT_B 		: in signed(15 downto 0);
-		ACTION_ID 				: in std_ulogic_vector (2 downto 0);
-		CARRY, ZERO, NEGATIVE 	: out std_ulogic;
-		OUTPUT_Y 				: out signed (15 downto 0)
+		INPUT_A, INPUT_B 							: in signed(15 downto 0);
+		ACTION_ID 										: in std_ulogic_vector (2 downto 0);
+		CARRY, ZERO, NEGATIVE, PARITY	: out std_ulogic;
+		OUTPUT_Y 											: out signed (15 downto 0)
 	);
 end entity;
 
 
 architecture rtl of ALU is
-	constant action_zero_as_output 			: std_ulogic_vector(2 downto 0) := "000";
-	constant action_input_b_as_output 		: std_ulogic_vector(2 downto 0) := "001";
-	constant action_add 					: std_ulogic_vector(2 downto 0) := "010";
-	constant action_sub 					: std_ulogic_vector(2 downto 0) := "011";
-	constant action_bin_to_bcd 				: std_ulogic_vector(2 downto 0) := "100";
+	constant action_zero_as_output 					: std_ulogic_vector(2 downto 0) := "000";
+	constant action_input_b_as_output 			: std_ulogic_vector(2 downto 0) := "001";
+	constant action_add 										: std_ulogic_vector(2 downto 0) := "010";
+	constant action_sub 										: std_ulogic_vector(2 downto 0) := "011";
+	constant action_bin_to_bcd 							: std_ulogic_vector(2 downto 0) := "100";
 	constant action_arithmetic_shift_left 	: std_ulogic_vector(2 downto 0) := "101";
 	constant action_arithmetic_shift_right 	: std_ulogic_vector(2 downto 0) := "110";
 
 begin
 	process (ACTION_ID, INPUT_A, INPUT_B)
-		variable extended_input_a, extended_input_b, result : signed (16 downto 0);
-		variable tmp1, tmp2 								: unsigned (15 downto 0);
-		variable carry_flag, zero_flag, negative_flag		: std_logic;
+		variable extended_input_a, extended_input_b, result 				: signed (16 downto 0);
+		variable tmp1, tmp2 																				: unsigned (15 downto 0);
+		variable carry_flag, zero_flag, negative_flag, parity_flag	: std_logic;
 	begin
 		-- extend inputs to 17 bits
 		extended_input_a(16) := INPUT_A(15);
@@ -37,6 +37,7 @@ begin
 		carry_flag := '0';
 		zero_flag := '0';
 		negative_flag := '0';
+		parity_flag := '0';
 
 		case action_id is 
 			when action_zero_as_output =>
@@ -92,10 +93,14 @@ begin
 		if result(16) = '1' then
 			negative_flag := '1';
 		end if;
+		if result(0) = '0' then
+			parity_flag := '1';
+		end if;
 
 		OUTPUT_Y 	<= result(15 downto 0);
-		ZERO 		<= zero_flag;
+		ZERO 			<= zero_flag;
 		NEGATIVE 	<= negative_flag;
 		CARRY 		<= carry_flag;
+		PARITY		<= parity_flag;
 	end process;
 end rtl; 
