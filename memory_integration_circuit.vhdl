@@ -10,7 +10,7 @@ entity memory_integration_circuit is
     DATA_TO_WRITE     : in signed(15 downto 0);
     DATA_TO_READ      : out signed(15 downto 0);
     READ_ADDRESS_BUS, SAVE_DATA_TO_WRITE, WRITE_DATA, READ_DATA : in std_logic;
-    ADDRESS_TO_WRITE  : out signed (31 downto 0);
+    ADDRESS_TO_WRITE  : out signed (15 downto 0);
     WR, RD            : out std_logic
   );
 end entity;
