@@ -1,0 +1,113 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'CLK'
+Slack : -12.835
+TNS   : -1826.681
+
+Type  : Slow 1200mV 85C Model Setup 'control_unit:inst1|state.handle_args_as_registers'
+Slack : -7.616
+TNS   : -176.368
+
+Type  : Slow 1200mV 85C Model Setup 'control_unit:inst1|state.handle_arg_as_register'
+Slack : -7.118
+TNS   : -102.120
+
+Type  : Slow 1200mV 85C Model Hold 'control_unit:inst1|state.handle_args_as_registers'
+Slack : -4.624
+TNS   : -56.975
+
+Type  : Slow 1200mV 85C Model Hold 'control_unit:inst1|state.handle_arg_as_register'
+Slack : -4.362
+TNS   : -39.034
+
+Type  : Slow 1200mV 85C Model Hold 'CLK'
+Slack : -0.493
+TNS   : -1.224
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLK'
+Slack : -3.000
+TNS   : -175.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'control_unit:inst1|state.handle_args_as_registers'
+Slack : -2.434
+TNS   : -82.240
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'control_unit:inst1|state.handle_arg_as_register'
+Slack : -1.406
+TNS   : -33.297
+
+Type  : Slow 1200mV 0C Model Setup 'CLK'
+Slack : -11.444
+TNS   : -1624.514
+
+Type  : Slow 1200mV 0C Model Setup 'control_unit:inst1|state.handle_args_as_registers'
+Slack : -6.877
+TNS   : -155.378
+
+Type  : Slow 1200mV 0C Model Setup 'control_unit:inst1|state.handle_arg_as_register'
+Slack : -6.426
+TNS   : -90.063
+
+Type  : Slow 1200mV 0C Model Hold 'control_unit:inst1|state.handle_args_as_registers'
+Slack : -4.155
+TNS   : -50.660
+
+Type  : Slow 1200mV 0C Model Hold 'control_unit:inst1|state.handle_arg_as_register'
+Slack : -3.918
+TNS   : -34.928
+
+Type  : Slow 1200mV 0C Model Hold 'CLK'
+Slack : -0.463
+TNS   : -1.060
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLK'
+Slack : -3.000
+TNS   : -175.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'control_unit:inst1|state.handle_args_as_registers'
+Slack : -2.152
+TNS   : -69.592
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'control_unit:inst1|state.handle_arg_as_register'
+Slack : -1.218
+TNS   : -25.649
+
+Type  : Fast 1200mV 0C Model Setup 'CLK'
+Slack : -6.848
+TNS   : -963.195
+
+Type  : Fast 1200mV 0C Model Setup 'control_unit:inst1|state.handle_args_as_registers'
+Slack : -4.194
+TNS   : -89.173
+
+Type  : Fast 1200mV 0C Model Setup 'control_unit:inst1|state.handle_arg_as_register'
+Slack : -3.893
+TNS   : -52.026
+
+Type  : Fast 1200mV 0C Model Hold 'control_unit:inst1|state.handle_args_as_registers'
+Slack : -2.756
+TNS   : -33.886
+
+Type  : Fast 1200mV 0C Model Hold 'control_unit:inst1|state.handle_arg_as_register'
+Slack : -2.564
+TNS   : -23.343
+
+Type  : Fast 1200mV 0C Model Hold 'CLK'
+Slack : -0.377
+TNS   : -1.751
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLK'
+Slack : -3.000
+TNS   : -181.707
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'control_unit:inst1|state.handle_args_as_registers'
+Slack : -1.253
+TNS   : -32.739
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'control_unit:inst1|state.handle_arg_as_register'
+Slack : -0.647
+TNS   : -11.701
+
+------------------------------------------------------------

@@ -1,0 +1,113 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+*/
+(header "symbol" (version "1.1"))
+(symbol
+	(rect 16 16 432 192)
+	(text "registers" (rect 5 0 39 12)(font "Arial" ))
+	(text "inst" (rect 8 160 20 172)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "CLK" (rect 0 0 20 12)(font "Arial" ))
+		(text "CLK" (rect 21 27 41 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 1))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "ACTION_ID[2..0]" (rect 0 0 73 12)(font "Arial" ))
+		(text "ACTION_ID[2..0]" (rect 21 43 94 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 3))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "DATA_INPUT[15..0]" (rect 0 0 87 12)(font "Arial" ))
+		(text "DATA_INPUT[15..0]" (rect 21 59 108 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "REGISTER_ID_TO_WRITE[3..0]" (rect 0 0 146 12)(font "Arial" ))
+		(text "REGISTER_ID_TO_WRITE[3..0]" (rect 21 75 167 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80)(line_width 3))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "VALUE_TO_WRITE[15..0]" (rect 0 0 119 12)(font "Arial" ))
+		(text "VALUE_TO_WRITE[15..0]" (rect 21 91 140 103)(font "Arial" ))
+		(line (pt 0 96)(pt 16 96)(line_width 3))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "REGISTER_ID_TO_READ_A[3..0]" (rect 0 0 156 12)(font "Arial" ))
+		(text "REGISTER_ID_TO_READ_A[3..0]" (rect 21 107 177 119)(font "Arial" ))
+		(line (pt 0 112)(pt 16 112)(line_width 3))
+	)
+	(port
+		(pt 0 128)
+		(input)
+		(text "REGISTER_ID_TO_READ_B[3..0]" (rect 0 0 154 12)(font "Arial" ))
+		(text "REGISTER_ID_TO_READ_B[3..0]" (rect 21 123 175 135)(font "Arial" ))
+		(line (pt 0 128)(pt 16 128)(line_width 3))
+	)
+	(port
+		(pt 0 144)
+		(input)
+		(text "ADDRESS_REGISTER_TO_READ[1..0]" (rect 0 0 181 12)(font "Arial" ))
+		(text "ADDRESS_REGISTER_TO_READ[1..0]" (rect 21 139 202 151)(font "Arial" ))
+		(line (pt 0 144)(pt 16 144)(line_width 3))
+	)
+	(port
+		(pt 416 32)
+		(output)
+		(text "REGISTER_A[15..0]" (rect 0 0 89 12)(font "Arial" ))
+		(text "REGISTER_A[15..0]" (rect 306 27 395 39)(font "Arial" ))
+		(line (pt 416 32)(pt 400 32)(line_width 3))
+	)
+	(port
+		(pt 416 48)
+		(output)
+		(text "REGISTER_B[15..0]" (rect 0 0 87 12)(font "Arial" ))
+		(text "REGISTER_B[15..0]" (rect 308 43 395 55)(font "Arial" ))
+		(line (pt 416 48)(pt 400 48)(line_width 3))
+	)
+	(port
+		(pt 416 64)
+		(output)
+		(text "ADDRESS_REGISTER[15..0]" (rect 0 0 130 12)(font "Arial" ))
+		(text "ADDRESS_REGISTER[15..0]" (rect 265 59 395 71)(font "Arial" ))
+		(line (pt 416 64)(pt 400 64)(line_width 3))
+	)
+	(port
+		(pt 416 80)
+		(output)
+		(text "NEXT_INSTRUCTION[15..0]" (rect 0 0 121 12)(font "Arial" ))
+		(text "NEXT_INSTRUCTION[15..0]" (rect 274 75 395 87)(font "Arial" ))
+		(line (pt 416 80)(pt 400 80)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 400 160)(line_width 1))
+	)
+)

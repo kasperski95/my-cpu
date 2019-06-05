@@ -1,0 +1,109 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/intelFPGA_lite/17.1
+E\my-cpu\
+Z0 w1559753401
+Z1 DPx9 cycloneiv 19 cycloneiv_atom_pack 0 22 h>^;BQWjM;n:gDXGk_;g00
+Z2 DPx9 cycloneiv 20 cycloneiv_components 0 22 ZG8VboUoN;mJ7?NJMokFV1
+Z3 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
+Z4 DPx6 altera 11 dffeas_pack 0 22 ?bDUB9Db2N8iCCALNL;CT3
+Z5 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
+Z6 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z7 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z8 DPx6 altera 28 altera_primitives_components 0 22 c]VUMXSEi8Z`KM1bem<:B3
+Z9 dC:/Users/arkad/Projects/EDA/my-cpu/quartus/simulation/modelsim
+Z10 8C:/Users/arkad/Projects/EDA/my-cpu/quartus/simulation/modelsim/my-cpu.vho
+Z11 FC:/Users/arkad/Projects/EDA/my-cpu/quartus/simulation/modelsim/my-cpu.vho
+l0
+L79
+V;V`Ia@ZCQ2V:kWODTFffY2
+!s100 PDJIk7[25?L3mbPdR]YFn0
+Z12 OV;C;10.5b;63
+32
+Z13 !s110 1559753427
+!i10b 1
+Z14 !s108 1559753427.000000
+Z15 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/arkad/Projects/EDA/my-cpu/quartus/simulation/modelsim/my-cpu.vho|
+Z16 !s107 C:/Users/arkad/Projects/EDA/my-cpu/quartus/simulation/modelsim/my-cpu.vho|
+!i113 1
+Z17 o-work work -2002 -explicit
+Z18 tExplicit 1 CvgOpt 0
+n@134my-cpu@134
+Astructure
+R1
+R2
+R3
+R4
+R5
+R6
+R7
+R8
+DEx4 work 8 \my-cpu\ 0 22 ;V`Ia@ZCQ2V:kWODTFffY2
+l897
+L167
+VO80nFDmEXHC[=z<b8[bKH2
+!s100 dGeH8T5SMH:3i`BFHhNSi1
+R12
+32
+!s110 1559753428
+!i10b 1
+R14
+R15
+R16
+!i113 1
+R17
+R18
+Ehard_block
+R0
+R3
+R1
+R5
+R6
+R7
+R2
+R9
+R10
+R11
+l0
+L34
+VVh9X_5SR7@bKD_i@3ICa`3
+!s100 ePBnogNIYclWVmd<QYN@33
+R12
+32
+R13
+!i10b 1
+R14
+R15
+R16
+!i113 1
+R17
+R18
+Astructure
+R3
+R1
+R5
+R6
+R7
+R2
+Z19 DEx4 work 10 hard_block 0 22 Vh9X_5SR7@bKD_i@3ICa`3
+l64
+L50
+Z20 V<7RhUZUfXFY;Q4@Y>jh`d2
+Z21 !s100 9XRhD6F>^g=RX1;2c[R1L2
+R12
+32
+R13
+!i10b 1
+R14
+R15
+R16
+!i113 1
+R17
+R18

@@ -10,9 +10,13 @@ end control_unit_tb;
 architecture test of control_unit_tb is
 	component control_unit
     port (
-      CLK, RESET : in std_logic;
+      CLK : in std_logic;
+      RESET : in std_logic;
       INSTRUCTION : in std_logic_vector(15 downto 0);
-      CARRY, ZERO, NEGATIVE, PARITY : in std_logic;
+      CARRY : in std_logic;
+      ZERO : in std_logic;
+      NEGATIVE : in std_logic;
+      PARITY : in std_logic;
       ALU_ACTION_ID : out std_logic_vector(2 downto 0);
       REGISTER_ID_TO_READ_A : out unsigned(3 downto 0);
       REGISTER_ID_TO_READ_B : out unsigned(3 downto 0);
@@ -69,7 +73,8 @@ begin
   begin
     clk <= '0';
     wait for 1 ns; clk <= '1';
-    instruction <= "0010000100001001";
+    --instruction <= "0010000100001001";
+    instruction <= "0000000000000000";
     wait for 1 ns; clk <= '0';
     
     wait for 1 ns; clk <= '1'; wait for 1 ns; clk <= '0';

@@ -11,7 +11,8 @@ architecture test of memory_integration_circuit_tb is
 	component memory_integration_circuit
     port (
       ADDRESS_BUS       : out unsigned(15 downto 0);
-      DATA_BUS          : inout signed (15 downto 0);
+      DATA_BUS_IN       : in signed (15 downto 0);
+      DATA_BUS_OUT      : out signed (15 downto 0);
       DATA_TO_WRITE     : in signed(15 downto 0);
       DATA_TO_READ      : out signed(15 downto 0);
       SEND_ADDRESS, SAVE_DATA_TO_WRITE, WRITE_DATA, READ_DATA : in std_logic;
@@ -21,7 +22,8 @@ architecture test of memory_integration_circuit_tb is
 	end component;
 
   signal address_bus        : unsigned(15 downto 0);
-  signal data_bus           : signed(15 downto 0);
+  signal data_bus_in        : signed(15 downto 0);
+  signal data_bus_out       : signed(15 downto 0);
   signal data_to_write      : signed(15 downto 0);
   signal data_to_read       : signed(15 downto 0);
   signal send_address       : std_logic;
@@ -35,7 +37,8 @@ architecture test of memory_integration_circuit_tb is
 begin
   memory_integration_circuit_inst: memory_integration_circuit port map (
     ADDRESS_BUS => address_bus,
-    DATA_BUS => data_bus,
+    DATA_BUS_IN => data_bus_in,
+    DATA_BUS_OUT => data_bus_out,
     DATA_TO_WRITE => data_to_write,
     DATA_TO_READ => data_to_read,
     SEND_ADDRESS => send_address,
@@ -50,13 +53,12 @@ begin
   process
   begin
     -- READ FROM DATA BUS
-    data_bus <= "0000000000001010";
-    wait for 1 ns;
-    
+    data_bus_in <= "0000000000001010";
     read_data <= '1'; 
-    wait for 1 ns;   
+    wait for 1 ns;
 
-    data_bus <= "0000000000000000";
+    read_data <= '0'; 
+    data_bus_in <= "0000000000000000";
     assert to_integer(data_to_read) = 10 report "Read data bus";
     wait for 1 ns;
 

@@ -29,7 +29,8 @@ begin
 		variable segment_register : signed(15 downto 0) := "0000000000000000";
 		variable segment_offset_h_register, segment_offset_l_register : signed(7 downto 0) := "00000000";
 		variable tmp : signed(15 downto 0) := "0000000000000000";
-		variable generic_register_a, generic_register_b, generic_register_c, generic_register_d : signed(15 downto 0) := "0000000000000000";
+		variable generic_register_b, generic_register_c, generic_register_d : signed(15 downto 0) := "0000000000000000";
+		variable generic_register_a : signed(15 downto 0) := "0000000000001010"; --TODO: remove after test
 	
 	begin
 		if rising_edge(CLK) then
@@ -70,7 +71,7 @@ begin
 			when "1001" => REGISTER_A <= generic_register_b;
 			when "1010" => REGISTER_A <= generic_register_c;
 			when "1011" => REGISTER_A <= generic_register_d;
-			when "1100" => REGISTER_A <= flag_register;
+			when "1100" => REGISTER_A <= "000000000000" & flag_register;
 			when "1101" => null;
 			when "1110" => null;
 			when "1111" => REGISTER_A <= DATA_INPUT;
@@ -90,7 +91,7 @@ begin
 			when "1001" => REGISTER_B <= generic_register_b;
 			when "1010" => REGISTER_B <= generic_register_c;
 			when "1011" => REGISTER_B <= generic_register_d;
-			when "1100" => REGISTER_B <= flag_register;
+			when "1100" => REGISTER_B <= "000000000000" & flag_register;
 			when "1101" => null;
 			when "1110" => null;
 			when "1111" => REGISTER_B <= DATA_INPUT;

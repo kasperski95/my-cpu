@@ -24,19 +24,23 @@ end entity control_unit;
 
 architecture logic of control_unit is
   constant mov : std_logic_vector(3 downto 0) := "1000";
+  constant bin_to_bcd : std_logic_vector(3 downto 0) := "1011";
   constant internal_zero : std_logic_vector(3 downto 0) := "0000";
   type lifecycle_t is (
+    initial,
     fetch,
     decode_instruction,
-    save
+    save_to_register
   );
   type state_t is (
+    initial,
     fetch,
+    handle_arg_as_register,
     handle_args_as_registers,
-    save
+    save_to_register
   );
-  signal lifecycle : lifecycle_t := fetch;
-  signal state : state_t := fetch;
+  signal lifecycle : lifecycle_t := initial;
+  signal state : state_t := initial;
 
 begin
   process(CLK)
@@ -45,20 +49,33 @@ begin
       lifecycle <= fetch;
     elsif rising_edge(CLK) then
       case (lifecycle) is
+        when initial =>
+          state <= initial;
+          lifecycle <= fetch;
+
         when fetch =>
           state <= fetch;
           lifecycle <= decode_instruction;
 
         when decode_instruction =>
           case INSTRUCTION(15 downto 13) is
-            when "001" => -- arg1, arg2 : general purpose registers
+            when "000" => -- arg1 : register
+              state <= handle_arg_as_register;
+              lifecycle <= save_to_register;
+            
+            when "001" => -- arg1, arg2 : register
               state <= handle_args_as_registers; 
-              lifecycle <= save;
-            when others => null;
+              lifecycle <= save_to_register;
+
+            when "010" => null;-- arg1 : address
+
+            when others =>
+              lifecycle <= initial;
+              state <= initial;
           end case;
-          
-        when save =>
-          state <= save;
+    
+        when save_to_register =>
+          state <= save_to_register;
           lifecycle <= fetch;
 
         when others =>
@@ -94,24 +111,35 @@ begin
     write_data_out := '0';
     read_data_out := '0';
 
-    case state is      
+    case state is
+      when initial => null;
+
       when fetch =>
         read_data_out := '1';
         register_action_id_out := "001";
       
-      when save =>
-        write_data_out := '1';
+      when save_to_register =>
+        register_id_to_write_out := unsigned(INSTRUCTION(8 downto 5));
+
+      when handle_arg_as_register =>
+        register_id_to_read_a_out := unsigned(INSTRUCTION(8 downto 5));
+        action := '1' & INSTRUCTION(12 downto 10);
 
       when handle_args_as_registers =>
         register_id_to_read_a_out := unsigned(INSTRUCTION(8 downto 5));
         register_id_to_read_b_out := unsigned(INSTRUCTION(3 downto 0));
         action := '1' & INSTRUCTION(12 downto 10);
+
+      when others => null;
     end case;
 
     -- ACTION
     case action is
       when mov =>
         alu_action_id_out := "001";
+        action := internal_zero;
+      when bin_to_bcd =>
+        alu_action_id_out := "100";
         action := internal_zero;
       when others =>
         alu_action_id_out := "000";

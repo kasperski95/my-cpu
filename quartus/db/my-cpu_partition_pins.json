@@ -1,0 +1,29 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "RD",
+					"strict" : false
+				},
+				{
+					"name" : "DEBUG_ALU_ACTION_ID[2]",
+					"strict" : false
+				},
+				{
+					"name" : "DEBUG_ALU_ACTION_ID[0]",
+					"strict" : false
+				},
+				{
+					"name" : "CLK",
+					"strict" : false
+				},
+				{
+					"name" : "RESET",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
